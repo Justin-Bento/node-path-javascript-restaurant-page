@@ -46,10 +46,17 @@ header {
   padding: 0;
 }
 
-.navigation-list li a {
+.navigation-list li button {
   text-decoration: none;
+  border: transparent;
+  background-color: transparent;
   color: var(--shark-950);
-  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.navigation-list li button:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Logo */
