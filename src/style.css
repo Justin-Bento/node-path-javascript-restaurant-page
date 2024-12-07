@@ -56,3 +56,9 @@ nav ul li button:hover {
 #content {
   padding: 3rem;
 }
+div {
+  max-width: 7rem;
+  height: 2px;
+  background-color: var(--shark-500);
+  margin: 2rem 0rem;
+}
