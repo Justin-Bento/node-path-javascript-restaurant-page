@@ -1,7 +1,6 @@
 // webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -19,12 +18,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "public", to: "." }, // Copy all files from public to dist
-        { from: "src/assets/resource", to: "assets/resource" }, // Copy all static assets
-      ],
+      favicon: "./src/assets/resource/favicon.ico",
     }),
   ],
   module: {
