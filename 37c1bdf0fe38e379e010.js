@@ -7,18 +7,22 @@ import { footer_content } from "./components/footer_content.js";
 import "./style.css";
 
 // Function to render the appropriate page based on the route
+const handleNavigation = (route) => {
+  window.location.hash = route; // Use hash for routing
+  renderPage(route);
+};
+
 const renderPage = (route) => {
   const content = document.querySelector("#content");
-  content.innerHTML = ""; // Clear the current page content
-
+  content.innerHTML = ""; // Clear the content
   switch (route) {
-    case "/about":
+    case "#/about":
       about();
       break;
-    case "/contact":
+    case "#/contact":
       contact();
       break;
-    case "/menu":
+    case "#/menu":
       menu();
       break;
     default:
@@ -26,14 +30,17 @@ const renderPage = (route) => {
   }
 };
 
-// Handle navigation
-const handleNavigation = (route) => {
-  // Push the route to the history stack
-  window.history.pushState({}, "", route);
+// Listen for hash changes
+window.addEventListener("hashchange", () => {
+  renderPage(window.location.hash);
+});
 
-  // Render the appropriate page
-  renderPage(route);
-};
+// Initial render
+document.addEventListener("DOMContentLoaded", () => {
+  header_content();
+  renderPage(window.location.hash || "#/"); // Default to home
+  footer_content();
+});
 
 // Add event listeners for navigation buttons
 const setupNavigation = () => {
