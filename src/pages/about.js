@@ -1,3 +1,5 @@
+import BistroHuddyCrew from "../assets/resource/images/bistrohuddy_crew.png";
+
 export const about = () => {
   const content = document.querySelector("#content");
   // Clear existing content to prevent duplicates
@@ -6,7 +8,7 @@ export const about = () => {
   // Create and append the company logo
 
   let myImage = document.createElement("img");
-  myImage.setAttribute("src", require("../assets/resource/images/bistrohuddy_crew.png"));
+  myImage.setAttribute("src", BistroHuddyCrew);
   myImage.setAttribute("alt", "Bistro Huddy Crew"); // Use the passed alt text
   myImage.setAttribute("class", "company-crew"); // Use the passed class name
 
