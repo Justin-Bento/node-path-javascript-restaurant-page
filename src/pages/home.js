@@ -1,4 +1,4 @@
-export const home_page = () => {
+export const home = () => {
   const content = document.querySelector("#content");
 
   // Clear existing content to prevent duplicates
