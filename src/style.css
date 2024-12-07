@@ -29,6 +29,10 @@ header {
   background-color: var(--shark-50);
   box-shadow: 0 1px 2px 0 var(--shark-200);
 }
+header * {
+  margin: 0rem;
+  padding: 1.75rem 3rem;
+}
 nav {
   padding: 1rem; /* 28px */
 }
@@ -61,4 +65,13 @@ div {
   height: 2px;
   background-color: var(--shark-500);
   margin: 2rem 0rem;
+}
+
+footer {
+  color: var(--shark-50);
+  background-color: var(--shark-950);
+}
+footer * {
+  margin: 0rem;
+  padding: 1.75rem 3rem;
 }
