@@ -1,3 +1,4 @@
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -19,46 +20,94 @@
   --shark-950: #242426;
 }
 
+/* Body Styles */
 body {
   color: var(--shark-950);
   background-color: var(--shark-50);
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
 }
+
+/* Header */
+
 header {
   background-color: var(--shark-50);
-  box-shadow: 0 1px 2px 0 var(--shark-200);
-}
-nav {
-  padding: 1rem; /* 28px */
-}
-nav ul {
-  list-style-type: none;
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-nav ul li {
-  margin: 0rem;
-  padding: 0rem;
+
+/* Logo */
+.company-logo {
+  width: 100px;
+  aspect-ratio: 16 / 7;
+  object-fit: contain;
+  margin: 0;
 }
-nav ul li button {
-  margin: 0rem;
-  padding: 0rem;
-  box-shadow: none;
+
+.navigation-list {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-list li button {
+  text-decoration: none;
   border: transparent;
   background-color: transparent;
+  color: var(--shark-950);
+  padding: 0.5rem 1rem;
 }
-nav ul li button:hover {
+
+.navigation-list li button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* Main Content */
 #content {
+  min-height: 100dvh;
   padding: 3rem;
 }
-div {
+
+/* Divider (Refined for Specific Use) */
+.divider {
   max-width: 7rem;
   height: 2px;
   background-color: var(--shark-500);
-  margin: 2rem 0rem;
+  margin: 2rem 0;
+}
+
+/* Footer */
+.footer-container {
+  background-color: var(--shark-950);
+  color: var(--shark-50);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-container p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-media a {
+  margin: 0 0.5rem;
+  color: var(--shark-50);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
 }
