@@ -22,26 +22,37 @@
 body {
   color: var(--shark-950);
   background-color: var(--shark-50);
+  margin: 0rem;
+  padding: 0rem;
+}
+header {
+  background-color: var(--shark-50);
+  box-shadow: 0 1px 2px 0 var(--shark-200);
 }
 nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 40ch;
-  gap: 1rem;
+  padding: 1rem; /* 28px */
 }
-ul {
+nav ul {
   list-style-type: none;
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
-button {
+nav ul li {
+  margin: 0rem;
+  padding: 0rem;
+}
+nav ul li button {
+  margin: 0rem;
+  padding: 0rem;
+  box-shadow: none;
+  border: transparent;
   background-color: transparent;
-  border-radius: 0.25rem;
-  border: 1px solid var(--shark-400);
-  padding: 0.5rem 1rem;
 }
-button:hover {
+nav ul li button:hover {
   cursor: pointer;
-  background-color: var(--shark-100);
+  text-decoration: underline;
+}
+#content {
+  padding: 3rem;
 }
