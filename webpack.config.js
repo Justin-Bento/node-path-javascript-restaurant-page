@@ -9,6 +9,7 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    publicPath: "/node-path-javascript-restaurant-page/",
   },
   devtool: "eval-source-map",
   devServer: {
