@@ -12,7 +12,6 @@ const BASE_PATH = REPO_NAME ? `/${REPO_NAME}` : "";
 
 // Function to render the appropriate page based on the route
 const handleNavigation = (route) => {
-  // Use pushState for clean URLs
   history.pushState(null, "", `${BASE_PATH}${route}`);
   renderPage(route);
 };
@@ -38,7 +37,6 @@ const renderPage = (route) => {
 
 // Listen for popstate events (browser back/forward)
 window.addEventListener("popstate", () => {
-  // Extract route from current pathname, removing repo name if present
   const path = window.location.pathname.replace(`${BASE_PATH}`, "") || "/";
   renderPage(path);
 });
@@ -56,17 +54,12 @@ const setupNavigation = () => {
 
 // Initial app initialization
 document.addEventListener("DOMContentLoaded", () => {
-  // Render header and footer
   header_content();
   footer_content();
 
-  // Determine initial route, accounting for GitHub Pages base path
   const initialPath = window.location.pathname.replace(`${BASE_PATH}`, "") || "/";
-
-  // Render initial page
   renderPage(initialPath);
 
-  // Setup navigation
   setupNavigation();
 });
 

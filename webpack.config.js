@@ -23,6 +23,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "public", to: "." }, // Copy all files from public to dist
+        { from: "src/assets/resource", to: "assets/resource" }, // Copy all static assets
       ],
     }),
   ],
