@@ -1,3 +1,5 @@
+import CompanyLogo from "../assets/resource/Site-logo.png";
+
 export const header_content = () => {
   const content = document.querySelector("#header_content");
 
@@ -5,11 +7,10 @@ export const header_content = () => {
   content.innerHTML = "";
 
   // Section for creating elements
-  const supporting = document.createElement("p");
-
-  // Section for writing Content
-  supporting.textContent = "Website Navigation.";
-
+  const supporting = document.createElement("img");
+  supporting.setAttribute("src", CompanyLogo);
+  supporting.setAttribute("alt", "Bistro Huddy: Company Logo");
+  supporting.setAttribute("class", "company-logo");
   // Section for appending Content
   content.appendChild(supporting);
 };

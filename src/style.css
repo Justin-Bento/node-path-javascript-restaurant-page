@@ -57,6 +57,14 @@ nav ul li button:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+.company-logo {
+  width: 240px;
+  aspect-ratio: 16 / 7;
+  object-fit: contain;
+  margin: 0;
+  padding: 0 3rem;
+}
+
 #content {
   min-height: 100dvh;
   padding: 3rem;
