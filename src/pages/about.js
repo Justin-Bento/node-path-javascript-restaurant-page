@@ -1,4 +1,5 @@
 import CompanyLogo from "../assets/resource/bistrohuddy_crew.png";
+import { Image } from "../lib/utilities";
 
 export const about = () => {
   const content = document.querySelector("#content");
@@ -6,11 +7,8 @@ export const about = () => {
   content.innerHTML = "";
 
   // Create and append the company logo
-  const companyLogo = document.createElement("img");
-  companyLogo.setAttribute("src", CompanyLogo);
-  companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
-  companyLogo.setAttribute("class", "company-crew");
-  content.appendChild(companyLogo);
+  let myImage = Image(CompanyLogo, "Bistro Huddy: Company Logo", "company-crew");
+  header_container.appendChild(myImage);
 
   const wrapper = document.createElement("div");
   wrapper.setAttribute("class", "wrapper");
