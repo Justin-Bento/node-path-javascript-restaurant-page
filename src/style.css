@@ -83,12 +83,31 @@ header {
 }
 
 /* Footer */
-footer {
-  color: var(--shark-50);
+.footer-container {
   background-color: var(--shark-950);
+  color: var(--shark-50);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-footer * {
-  margin: 0;
-  padding: 1.75rem 3rem;
+.footer-container p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-media a {
+  margin: 0 0.5rem;
+  color: var(--shark-50);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
 }
