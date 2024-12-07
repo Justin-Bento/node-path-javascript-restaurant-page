@@ -1,4 +1,5 @@
 import CompanyLogo from "../assets/resource/Site-logo.png";
+import { Image } from "../lib/utilities";
 
 export const header_content = () => {
   const content = document.querySelector("#header_content");
@@ -11,11 +12,8 @@ export const header_content = () => {
   content.appendChild(header_container);
 
   // Create and append the company logo
-  const companyLogo = document.createElement("img");
-  companyLogo.setAttribute("src", CompanyLogo);
-  companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
-  companyLogo.setAttribute("class", "company-logo");
-  header_container.appendChild(companyLogo);
+  let myImage = Image(CompanyLogo, "Bistro Huddy: Company Logo", "company-logo");
+  header_container.appendChild(myImage);
 
   // Create the navigation container
   const websiteNavigation = document.createElement("nav");
