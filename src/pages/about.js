@@ -12,6 +12,10 @@ export const about = () => {
   companyLogo.setAttribute("class", "company-crew");
   content.appendChild(companyLogo);
 
+  const wrapper = document.createElement("div");
+  wrapper.setAttribute("class", "wrapper");
+  content.appendChild(wrapper);
+
   // Section for creating elements
   const headline = document.createElement("h1");
   const supporting = document.createElement("p");
@@ -21,6 +25,6 @@ export const about = () => {
   supporting.textContent =
     "Bistro Huddy is a fictional restaurant and set created by Drew Talbert and his wife, Andrea Kelley.";
   // Append the menu list to the content
-  content.appendChild(headline);
-  content.appendChild(supporting);
+  wrapper.appendChild(headline);
+  wrapper.appendChild(supporting);
 };
