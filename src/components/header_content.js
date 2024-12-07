@@ -7,10 +7,10 @@ export const header_content = () => {
   content.innerHTML = "";
 
   // Section for creating elements
-  const supporting = document.createElement("img");
-  supporting.setAttribute("src", CompanyLogo);
-  supporting.setAttribute("alt", "Bistro Huddy: Company Logo");
-  supporting.setAttribute("class", "company-logo");
+  const companyLogo = document.createElement("img");
+  companyLogo.setAttribute("src", CompanyLogo);
+  companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
+  companyLogo.setAttribute("class", "company-logo");
   // Section for appending Content
-  content.appendChild(supporting);
+  content.appendChild(companyLogo);
 };
