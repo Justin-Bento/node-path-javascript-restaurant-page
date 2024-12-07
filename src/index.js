@@ -1,5 +1,7 @@
-// index.js
+// Import the main_page function
+import { main_page } from "./main_page.js";
 import "./style.css";
-import { greeting } from "./greeting.js";
-
-console.log(greeting);
+// Call the function to render the content
+document.addEventListener("DOMContentLoaded", () => {
+  main_page();
+});
