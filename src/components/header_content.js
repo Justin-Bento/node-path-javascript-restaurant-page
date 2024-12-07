@@ -6,11 +6,28 @@ export const header_content = () => {
   // Clear existing content to prevent duplicates
   content.innerHTML = "";
 
-  // Section for creating elements
+  // Section for creating and appending the company logo
   const companyLogo = document.createElement("img");
   companyLogo.setAttribute("src", CompanyLogo);
   companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
   companyLogo.setAttribute("class", "company-logo");
-  // Section for appending Content
   content.appendChild(companyLogo);
+
+  // Section for creating and handling navigation links
+  const websiteNavigation = document.createElement("nav");
+  websiteNavigation.setAttribute("class", "website-navigation"); // Added a class for styling
+  content.appendChild(websiteNavigation);
+
+  const websiteNavigation_list = document.createElement("ul");
+  websiteNavigation_list.setAttribute("class", "navigation-list"); // Added a class for styling
+  websiteNavigation.appendChild(websiteNavigation_list);
+
+  const websiteNavigation_list_item = document.createElement("li");
+  websiteNavigation_list_item.setAttribute("class", "navigation-list-item"); // Added a class for styling
+  websiteNavigation_list.appendChild(websiteNavigation_list_item);
+
+  const websiteNavigation_list_item_action = document.createElement("button");
+  websiteNavigation_list_item_action.setAttribute("class", "navigation-button"); // Added a class for styling
+  websiteNavigation_list_item_action.textContent = "Home";
+  websiteNavigation_list_item.appendChild(websiteNavigation_list_item_action);
 };

@@ -1,3 +1,4 @@
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -19,44 +20,39 @@
   --shark-950: #242426;
 }
 
+/* Body Styles */
 body {
   color: var(--shark-950);
   background-color: var(--shark-50);
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0;
+  padding: 0;
 }
+
+/* Header */
+
 header {
   background-color: var(--shark-50);
-  box-shadow: 0 1px 2px 0 var(--shark-200);
-}
-header * {
-  margin: 0rem;
-  padding: 1.75rem 3rem;
-}
-nav {
-  padding: 1rem; /* 28px */
-}
-nav ul {
-  list-style-type: none;
   display: flex;
   align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-list {
+  display: flex;
+  list-style: none;
   gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
-nav ul li {
-  margin: 0rem;
-  padding: 0rem;
+
+.navigation-list li a {
+  text-decoration: none;
+  color: var(--shark-950);
+  font-weight: bold;
 }
-nav ul li button {
-  margin: 0rem;
-  padding: 0rem;
-  box-shadow: none;
-  border: transparent;
-  background-color: transparent;
-}
-nav ul li button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
+
+/* Logo */
 .company-logo {
   width: 240px;
   aspect-ratio: 16 / 7;
@@ -65,22 +61,27 @@ nav ul li button:hover {
   padding: 0 3rem;
 }
 
+/* Main Content */
 #content {
   min-height: 100dvh;
   padding: 3rem;
 }
-div {
+
+/* Divider (Refined for Specific Use) */
+.divider {
   max-width: 7rem;
   height: 2px;
   background-color: var(--shark-500);
-  margin: 2rem 0rem;
+  margin: 2rem 0;
 }
 
+/* Footer */
 footer {
   color: var(--shark-50);
   background-color: var(--shark-950);
 }
+
 footer * {
-  margin: 0rem;
+  margin: 0;
   padding: 1.75rem 3rem;
 }
