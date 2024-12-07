@@ -3,34 +3,45 @@ import CompanyLogo from "../assets/resource/Site-logo.png";
 export const header_content = () => {
   const content = document.querySelector("#header_content");
 
-  // Clear existing content to prevent duplicates
+  // Clear existing content
   content.innerHTML = "";
 
-  // Section for creating and appending the company logo
+  // Create and append the company logo
   const companyLogo = document.createElement("img");
   companyLogo.setAttribute("src", CompanyLogo);
   companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
   companyLogo.setAttribute("class", "company-logo");
   content.appendChild(companyLogo);
 
-  // Section for creating and handling navigation links
-  const url_locations = ["Home", "Menu", "Location", "Our Story", "Contact"];
+  // Create the navigation container
   const websiteNavigation = document.createElement("nav");
-  websiteNavigation.setAttribute("class", "website-navigation"); // Added a class for styling
+  websiteNavigation.setAttribute("class", "website-navigation");
   content.appendChild(websiteNavigation);
 
+  // Create the navigation list
   const websiteNavigation_list = document.createElement("ul");
-  websiteNavigation_list.setAttribute("class", "navigation-list"); // Added a class for styling
+  websiteNavigation_list.setAttribute("class", "navigation-list");
   websiteNavigation.appendChild(websiteNavigation_list);
 
-  url_locations.forEach((location) => {
-    const websiteNavigation_list_item = document.createElement("li");
-    websiteNavigation_list_item.setAttribute("class", "navigation-list-item"); // Added a class for styling
-    websiteNavigation_list.appendChild(websiteNavigation_list_item);
+  // Define navigation items with routes
+  const navItems = [
+    { name: "Home", route: "/" },
+    { name: "About", route: "/about" },
+    { name: "Menu", route: "/menu" },
+    { name: "Contact", route: "/contact" },
+  ];
 
-    const websiteNavigation_list_item_action = document.createElement("button");
-    websiteNavigation_list_item_action.setAttribute("class", "navigation-button"); // Added a class for styling
-    websiteNavigation_list_item_action.textContent = location;
-    websiteNavigation_list_item.appendChild(websiteNavigation_list_item_action);
+  // Create navigation links
+  navItems.forEach((item) => {
+    const navListItem = document.createElement("li");
+    navListItem.setAttribute("class", "navigation-list-item");
+
+    const navButton = document.createElement("button");
+    navButton.textContent = item.name;
+    navButton.setAttribute("class", "navigation-button");
+    navButton.setAttribute("data-route", item.route); // Add data-route attribute
+    navListItem.appendChild(navButton);
+
+    websiteNavigation_list.appendChild(navListItem);
   });
 };
