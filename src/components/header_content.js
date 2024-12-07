@@ -1,4 +1,3 @@
-import CompanyLogo from "../assets/resource/images/Site-logo.png";
 import { Image } from "../lib/utilities";
 
 export const header_content = () => {
@@ -12,7 +11,7 @@ export const header_content = () => {
   content.appendChild(header_container);
 
   // Create and append the company logo
-  let myImage = Image(CompanyLogo, "Bistro Huddy: Company Logo", "company-logo");
+  let myImage = Image(require("../assets/resource/images/Site-logo.png"), "Bistro Huddy: Company Logo", "company-logo");
   header_container.appendChild(myImage);
 
   // Create the navigation container

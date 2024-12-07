@@ -1,4 +1,3 @@
-import CompanyLogo from "../assets/resource/images/bistrohuddy_crew.png";
 import { Image } from "../lib/utilities";
 
 export const about = () => {
@@ -7,7 +6,11 @@ export const about = () => {
   content.innerHTML = "";
 
   // Create and append the company logo
-  let myImage = Image(CompanyLogo, "Bistro Huddy: Company Logo", "company-crew");
+  let myImage = Image(
+    require("../assets/resource/images/bistrohuddy_crew.png"),
+    "Bistro Huddy: Company Logo",
+    "company-crew"
+  );
   header_container.appendChild(myImage);
 
   const wrapper = document.createElement("div");
