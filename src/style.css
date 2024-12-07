@@ -58,6 +58,7 @@ nav ul li button:hover {
   text-decoration: underline;
 }
 #content {
+  min-height: 100dvh;
   padding: 3rem;
 }
 div {
