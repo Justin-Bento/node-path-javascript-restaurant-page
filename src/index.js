@@ -6,23 +6,29 @@ import { header_content } from "./components/header_content.js";
 import { footer_content } from "./components/footer_content.js";
 import "./style.css";
 
+// Get the repository name for GitHub Pages routing
+const REPO_NAME = window.location.pathname.split("/")[1];
+const BASE_PATH = REPO_NAME ? `/${REPO_NAME}` : "";
+
 // Function to render the appropriate page based on the route
 const handleNavigation = (route) => {
-  window.location.hash = route; // Use hash for routing
+  // Use pushState for clean URLs
+  history.pushState(null, "", `${BASE_PATH}${route}`);
   renderPage(route);
 };
 
 const renderPage = (route) => {
   const content = document.querySelector("#content");
   content.innerHTML = ""; // Clear the content
+
   switch (route) {
-    case "#/about":
+    case "/about":
       about();
       break;
-    case "#/contact":
+    case "/contact":
       contact();
       break;
-    case "#/menu":
+    case "/menu":
       menu();
       break;
     default:
@@ -30,22 +36,16 @@ const renderPage = (route) => {
   }
 };
 
-// Listen for hash changes
-window.addEventListener("hashchange", () => {
-  renderPage(window.location.hash);
+// Listen for popstate events (browser back/forward)
+window.addEventListener("popstate", () => {
+  // Extract route from current pathname, removing repo name if present
+  const path = window.location.pathname.replace(`${BASE_PATH}`, "") || "/";
+  renderPage(path);
 });
 
-// Initial render
-document.addEventListener("DOMContentLoaded", () => {
-  header_content();
-  renderPage(window.location.hash || "#/"); // Default to home
-  footer_content();
-});
-
-// Add event listeners for navigation buttons
+// Setup navigation buttons
 const setupNavigation = () => {
   const navButtons = document.querySelectorAll(".navigation-button");
-
   navButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const route = event.target.getAttribute("data-route");
@@ -54,16 +54,28 @@ const setupNavigation = () => {
   });
 };
 
-// Initialize the app
+// Initial app initialization
 document.addEventListener("DOMContentLoaded", () => {
-  header_content(); // Render header
-  renderPage(window.location.pathname); // Render the initial page based on the current route
-  footer_content(); // Render footer
+  // Render header and footer
+  header_content();
+  footer_content();
 
-  setupNavigation(); // Setup navigation for buttons
+  // Determine initial route, accounting for GitHub Pages base path
+  const initialPath = window.location.pathname.replace(`${BASE_PATH}`, "") || "/";
 
-  // Handle back/forward navigation
-  window.addEventListener("popstate", () => {
-    renderPage(window.location.pathname);
-  });
+  // Render initial page
+  renderPage(initialPath);
+
+  // Setup navigation
+  setupNavigation();
+});
+
+// Ensure links work correctly on GitHub Pages
+document.addEventListener("click", (e) => {
+  const target = e.target.closest("a");
+  if (target && target.getAttribute("data-route")) {
+    e.preventDefault();
+    const route = target.getAttribute("data-route");
+    handleNavigation(route);
+  }
 });
