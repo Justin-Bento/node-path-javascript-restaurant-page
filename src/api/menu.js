@@ -1,3 +1,17 @@
+// Define an array of elements and their content
+export const home_elements = [
+  { element: "h1", content: "Welcome To Bistro Huddy" },
+  {
+    element: "p",
+    content:
+      "Bistro Huddy is a workplace comedy solo performance web series created and written by Drew Talbert and Andrea Kelley.",
+  },
+  {
+    element: "p",
+    content:
+      "Set in Los Angeles in the titular restaurant, it revolves around the daily lives of the Bistro Huddy staff and their guests.",
+  },
+];
 export const specials = [
   {
     name: "Sanafé Chicken Plate",
