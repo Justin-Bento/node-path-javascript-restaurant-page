@@ -41,7 +41,7 @@ header {
 
 /* Logo */
 .company-logo {
-  width: 125px;
+  width: 100px;
   aspect-ratio: 16 / 7;
   object-fit: contain;
   margin: 0;
