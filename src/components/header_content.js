@@ -1,5 +1,3 @@
-import { Image } from "../lib/utilities";
-
 export const header_content = () => {
   const content = document.querySelector("#header_content");
 
@@ -11,7 +9,11 @@ export const header_content = () => {
   content.appendChild(header_container);
 
   // Create and append the company logo
-  let myImage = Image(require("../assets/resource/images/Site-logo.png"), "Bistro Huddy: Company Logo", "company-logo");
+  let myImage = document.createElement("img");
+  myImage.setAttribute("src", require("../assets/resource/images/Site-logo.png"));
+  myImage.setAttribute("alt", "Bistro Huddy Company Logo"); // Use the passed alt text
+  myImage.setAttribute("class", "company-logo"); // Use the passed class name
+
   header_container.appendChild(myImage);
 
   // Create the navigation container

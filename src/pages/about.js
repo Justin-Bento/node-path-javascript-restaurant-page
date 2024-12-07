@@ -1,17 +1,16 @@
-import { Image } from "../lib/utilities";
-
 export const about = () => {
   const content = document.querySelector("#content");
   // Clear existing content to prevent duplicates
   content.innerHTML = "";
 
   // Create and append the company logo
-  let myImage = Image(
-    require("../assets/resource/images/bistrohuddy_crew.png"),
-    "Bistro Huddy: Company Logo",
-    "company-crew"
-  );
-  header_container.appendChild(myImage);
+
+  let myImage = document.createElement("img");
+  myImage.setAttribute("src", require("../assets/resource/images/bistrohuddy_crew.png"));
+  myImage.setAttribute("alt", "Bistro Huddy Crew"); // Use the passed alt text
+  myImage.setAttribute("class", "company-crew"); // Use the passed class name
+
+  content.appendChild(myImage);
 
   const wrapper = document.createElement("div");
   wrapper.setAttribute("class", "wrapper");
