@@ -1,4 +1,41 @@
-/* styles.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Default Gray Colour Scheme */
+  --shark-50: #f5f5f6;
+  --shark-100: #e6e6e7;
+  --shark-200: #cfd0d2;
+  --shark-300: #aeafb2;
+  --shark-400: #85878b;
+  --shark-500: #696971;
+  --shark-600: #5a5b60;
+  --shark-700: #4d4d51;
+  --shark-800: #434347;
+  --shark-900: #3b3b3e;
+  --shark-950: #242426;
+}
+
 body {
-  background-color: rebeccapurple;
+  color: var(--shark-950);
+  background-color: var(--shark-50);
+}
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 40ch;
+  gap: 1rem;
+}
+button {
+  background-color: transparent;
+  border-radius: 0.25rem;
+  border: 1px solid var(--shark-400);
+  padding: 0.5rem 1rem;
+}
+button:hover {
+  cursor: pointer;
+  background-color: var(--shark-100);
 }
