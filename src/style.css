@@ -77,7 +77,7 @@ header {
 /* Main Content */
 #content {
   min-height: 100dvh;
-  padding: 3rem;
+  /* padding: 3rem; */
 }
 
 /* Divider (Refined for Specific Use) */
@@ -116,4 +116,10 @@ header {
 
 .social-media a:hover {
   text-decoration: underline;
+}
+
+/* New Page -- About */
+
+.company-crew {
+  width: 100%;
 }
