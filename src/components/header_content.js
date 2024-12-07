@@ -1,4 +1,4 @@
-import CompanyLogo from "../assets/resource/Site-logo.png";
+import CompanyLogo from "../assets/resource/images/Site-logo.png";
 import { Image } from "../lib/utilities";
 
 export const header_content = () => {

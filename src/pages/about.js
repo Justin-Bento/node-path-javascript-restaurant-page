@@ -1,4 +1,4 @@
-import CompanyLogo from "../assets/resource/bistrohuddy_crew.png";
+import CompanyLogo from "../assets/resource/images/bistrohuddy_crew.png";
 import { Image } from "../lib/utilities";
 
 export const about = () => {
