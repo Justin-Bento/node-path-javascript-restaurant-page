@@ -6,17 +6,21 @@ export const header_content = () => {
   // Clear existing content
   content.innerHTML = "";
 
+  const header_container = document.createElement("div");
+  header_container.setAttribute("class", "content");
+  content.appendChild(header_container);
+
   // Create and append the company logo
   const companyLogo = document.createElement("img");
   companyLogo.setAttribute("src", CompanyLogo);
   companyLogo.setAttribute("alt", "Bistro Huddy: Company Logo");
   companyLogo.setAttribute("class", "company-logo");
-  content.appendChild(companyLogo);
+  header_container.appendChild(companyLogo);
 
   // Create the navigation container
   const websiteNavigation = document.createElement("nav");
   websiteNavigation.setAttribute("class", "website-navigation");
-  content.appendChild(websiteNavigation);
+  header_container.appendChild(websiteNavigation);
 
   // Create the navigation list
   const websiteNavigation_list = document.createElement("ul");
