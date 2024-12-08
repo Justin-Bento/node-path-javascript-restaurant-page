@@ -8,7 +8,7 @@ import "./style.css";
 
 // Get the repository name for GitHub Pages routing
 const REPO_NAME = "node-path-javascript-restaurant-page";
-const BASE_PATH = `/${REPO_NAME}/`;
+const BASE_PATH = `/${REPO_NAME}`;
 
 // Function to render the appropriate page based on the route
 const handleNavigation = (route) => {
