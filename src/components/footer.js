@@ -1,5 +1,5 @@
-export const footer_content = () => {
-  const content = document.querySelector("#footer_content");
+export const Footer = () => {
+  const content = document.querySelector("footer");
 
   // Clear existing content to prevent duplicates
   content.innerHTML = "";

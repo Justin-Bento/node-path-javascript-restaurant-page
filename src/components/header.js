@@ -1,8 +1,7 @@
 import BistroHuddyLogo from "../assets/resource/images/Site-logo.png";
 
-export const header_content = () => {
-  const content = document.querySelector("#header_content");
-
+export const Header = () => {
+  const content = document.querySelector("header");
   // Clear existing content
   content.innerHTML = "";
 
@@ -12,9 +11,9 @@ export const header_content = () => {
 
   // Create and append the company logo
   let myImage = document.createElement("img");
-  myImage.setAttribute("src", BistroHuddyLogo);
-  myImage.setAttribute("alt", "Bistro Huddy Company Logo"); // Use the passed alt text
-  myImage.setAttribute("class", "company-logo"); // Use the passed class name
+  myImage.src = BistroHuddyLogo;
+  myImage.alt = "Bistro Huddy Company Logo"; // Use the passed alt text
+  myImage.className = "company-logo"; // Use the passed class name
 
   header_container.appendChild(myImage);
 

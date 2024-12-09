@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -9,7 +8,6 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "/node-path-javascript-restaurant-page/",
   },
   devtool: "eval-source-map",
   devServer: {
@@ -18,26 +16,35 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
-      favicon: "./src/assets/resource/favicon.ico",
     }),
   ],
   module: {
     rules: [
+      // CSS Loader
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      // HTML Loader
       {
         test: /\.html$/i,
         loader: "html-loader",
       },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
-      },
+      // Fonts Loader
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: "asset/resource", // Correct type for static assets
+        generator: {
+          filename: "resource/fonts/[name][ext]", // Output fonts to "resource/fonts/"
+        },
+      },
+      // Images Loader
+      {
+        test: /\.(png|svg|jpg|jpeg|webp|jpe?g|gif)$/i,
+        type: "asset/resource", // Correct type for static assets
+        generator: {
+          filename: "resource/images/[name][ext]", // Output images to "resource/images/"
+        },
       },
     ],
   },
