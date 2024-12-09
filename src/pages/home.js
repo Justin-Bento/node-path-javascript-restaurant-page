@@ -1,27 +1,20 @@
-import heroBanner from "../assets/resource/images/bistro-huddy-fake-concept.webp";
+import bistroHuddyHeroBanner from "../assets/resource/images/bistro-huddy-fake-concept.webp";
 
 export const Home = () => {
-  // Get the <main> element and verify its existence
-  const mainContent = document.querySelector("main");
-  if (!mainContent) {
-    console.error("Main content element <main> not found in the DOM.");
-    return;
-  }
+  const content = document.querySelector("#content");
+
+  // Clear existing content to prevent duplicates
+  content.innerHTML = "";
 
   // Create an image element and append it to the wrapper
   const imgElement = document.createElement("img");
-  imgElement.src = heroBanner;
-  imgElement.alt = "Hero Banner for Bistro Huddy";
-  imgElement.className = "heroBanner";
-  mainContent.appendChild(imgElement);
+  imgElement.src = bistroHuddyHeroBanner; // Webpack resolves this path automatically
+  imgElement.alt = "Hero Banner for Bistro Huddy"; // Add alt text for accessibility
+  imgElement.setAttribute("class", "heroBanner");
+  content.appendChild(imgElement);
 
-  // Create a wrapper div and append it to the main content
+  // Create and append a wrapper
   const wrapper = document.createElement("div");
   wrapper.setAttribute("class", "wrapper");
-  mainContent.appendChild(wrapper);
-
-  // Create a heading element and append it to the wrapper
-  const heading1 = document.createElement("h1");
-  heading1.textContent = "Bistro Huddy";
-  wrapper.appendChild(heading1);
+  content.appendChild(wrapper);
 };
