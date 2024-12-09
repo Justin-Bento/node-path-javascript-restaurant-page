@@ -11,9 +11,9 @@ export const Header = () => {
 
   // Create and append the company logo
   let myImage = document.createElement("img");
-  myImage.setAttribute("src", BistroHuddyLogo);
-  myImage.setAttribute("alt", "Bistro Huddy Company Logo"); // Use the passed alt text
-  myImage.setAttribute("class", "company-logo"); // Use the passed class name
+  myImage.src = BistroHuddyLogo;
+  myImage.alt = "Bistro Huddy Company Logo"; // Use the passed alt text
+  myImage.className = "company-logo"; // Use the passed class name
 
   header_container.appendChild(myImage);
 
