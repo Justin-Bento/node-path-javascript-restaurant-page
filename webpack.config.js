@@ -40,7 +40,7 @@ module.exports = {
       },
       // Images Loader
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|webp|jpe?g|gif)$/i,
         type: "asset/resource", // Correct type for static assets
         generator: {
           filename: "resource/images/[name][ext]", // Output images to "resource/images/"
