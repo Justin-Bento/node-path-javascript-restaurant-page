@@ -82,6 +82,12 @@ header {
   min-height: 100dvh;
   /* padding: 3rem; */
 }
+.heroBanner {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Divider (Refined for Specific Use) */
 .divider {
