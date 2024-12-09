@@ -17,4 +17,9 @@ export const Home = () => {
   const wrapper = document.createElement("div");
   wrapper.setAttribute("class", "wrapper");
   content.appendChild(wrapper);
+
+  // Create a heading element and append it to the wrapper
+  const heading1 = document.createElement("h1");
+  heading1.textContent = "Bistro Huddy";
+  wrapper.appendChild(heading1);
 };
