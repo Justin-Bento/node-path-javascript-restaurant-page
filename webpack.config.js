@@ -1,3 +1,4 @@
+// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -6,11 +7,14 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public"),
     clean: true,
   },
   devtool: "eval-source-map",
   devServer: {
+    static: {
+      directory: path.resolve(__dirname, "public"), // Serve static files from 'public'
+    },
     watchFiles: ["./src/template.html"],
   },
   plugins: [
@@ -20,31 +24,17 @@ module.exports = {
   ],
   module: {
     rules: [
-      // CSS Loader
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
-      // HTML Loader
       {
         test: /\.html$/i,
         loader: "html-loader",
       },
-      // Fonts Loader
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource", // Correct type for static assets
-        generator: {
-          filename: "resource/fonts/[name][ext]", // Output fonts to "resource/fonts/"
-        },
-      },
-      // Images Loader
-      {
-        test: /\.(png|svg|jpg|jpeg|webp|jpe?g|gif)$/i,
-        type: "asset/resource", // Correct type for static assets
-        generator: {
-          filename: "resource/images/[name][ext]", // Output images to "resource/images/"
-        },
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
