@@ -1,4 +1,4 @@
-import { food } from "../api/menus.js";
+import { food } from "../api/BistroMenu.js";
 
 export const menu = () => {
   const content = document.querySelector("#content");
