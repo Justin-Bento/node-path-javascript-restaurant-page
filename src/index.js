@@ -14,6 +14,13 @@ import { Footer } from "./components/footer.js";
 // Function to clear and load content dynamically
 function switchTab(route) {
   const content = document.getElementById("content");
+
+  if (!content) {
+    console.error("Content div not found in the DOM");
+    return;
+  }
+
+  console.log(`Switching to route: ${route}`);
   content.innerHTML = ""; // Clear existing content
 
   switch (route) {
@@ -30,18 +37,25 @@ function switchTab(route) {
       contact();
       break;
     default:
+      content.innerHTML = "<h1>404 - Page Not Found</h1>";
       console.error("Unknown route:", route);
   }
 }
 
 // Function to set up the header
 function setupHeader() {
-  const content = document.querySelector("header");
-  content.innerHTML = ""; // Clear existing content
+  const header = document.querySelector("header");
+
+  if (!header) {
+    console.error("Header element not found in the DOM");
+    return;
+  }
+
+  header.innerHTML = ""; // Clear existing content
 
   const headerContainer = document.createElement("div");
   headerContainer.setAttribute("class", "content");
-  content.appendChild(headerContainer);
+  header.appendChild(headerContainer);
 
   // Add company logo
   const logo = document.createElement("img");
@@ -88,9 +102,13 @@ function setupHeader() {
 // Main initialization function
 function initializeApp() {
   setupHeader(); // Setup header and navigation
-  Home(); // Load default Home page
+
+  // Use the current route or default to "/"
+  const currentRoute = location.pathname || "/";
+  switchTab(currentRoute); // Load content based on the route
+
   Footer(); // Setup footer
 }
 
-// Initialize the application after DOM content is loaded
+// Ensure DOMContentLoaded before running the app
 document.addEventListener("DOMContentLoaded", initializeApp);
