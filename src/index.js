@@ -6,5 +6,9 @@ import { Home } from "./pages/home.js";
 document.addEventListener("DOMContentLoaded", () => {
   Header();
   Home();
+  function clearContent() {
+    const content = document.querySelector("#content");
+    content.innerHTML = "";
+  }
   Footer();
 });
