@@ -36,6 +36,18 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.(webp)$/,
+        use: [
+          {
+            loader: "file-loader", // or 'url-loader' if you want to inline small images
+            options: {
+              name: "[name].[hash].[ext]",
+              outputPath: "images/", // Adjust output directory as needed
+            },
+          },
+        ],
+      },
     ],
   },
 };
