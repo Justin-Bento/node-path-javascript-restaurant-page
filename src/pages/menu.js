@@ -1,4 +1,4 @@
-import { specials } from "../api/menu";
+import { food } from "../api/menus.js";
 
 export const menu = () => {
   const content = document.querySelector("#content");
@@ -27,7 +27,7 @@ export const menu = () => {
   const menu_list = document.createElement("ul");
   menu_list.setAttribute("id", "menu-list");
   // Populate the menu list with items from the array
-  specials.forEach((entree) => {
+  food.smallBites.forEach((entree) => {
     const menu_list_item = document.createElement("li");
     menu_list_item.classList.add("menu-list-item");
 
