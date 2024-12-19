@@ -20,7 +20,7 @@ export const food = {
     },
     {
       id: 4,
-      name: "Green Chile Queso or Quesdilla",
+      name: "Green Chile Queso or Quesadilla",
       description: "The quick brown fox jumps over the lazy dog.",
       price: "$18",
     },
