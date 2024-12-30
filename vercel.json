@@ -6,5 +6,10 @@
     }
   ],
   "cleanUrls": true,
-  "public": true
+  "public": true,
+  "parseOptions": {
+    "httpOnly": true,
+    "sameSite": "none",
+    "secure": true
+  }
 }
