@@ -13,7 +13,14 @@ The goal of this repository is to utilise the JavaScript DOM (Document Object Mo
 - JavaScript
 - Webpack
 
+## Features
 
+- Home page: Includes basic information about the resturant.
+- About page explaing the conception of the resturant 
+- Staff page: Pictures of the staff and their positions. 
+- Menu page: A list of all the food, drinks and more.
+- Reservarion page: make reservations 
+- Contact Page: Contact the resturant and find where we're located. 
 
 ## Acknowledgement
 
