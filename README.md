@@ -2,9 +2,9 @@
 
 The goal of this repository is to utilise the JavaScript DOM (Document Object Model). The subject will revolve around me building dyanmic interface using webpack and JavaScript, and the theme of the website is to create a homepage for a random restaurant. 
 
-- Project Start Date:
-- Project End Date:
-- Project Link:
+- Project Start Date: Sunday 1st December 2024
+- Project End Date: Saturday 24th January 2024
+- Project Link: [Node Path JavaScript Resturant Page](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page)
 
 ## Acknowledgement
 
